@@ -1,0 +1,119 @@
+
+<div ng-controller="myCtrl">
+    <style>
+        table, th , td  {
+            border: 2px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        table tr:nth-child(odd)	{
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        pre{
+
+            width: 800px;
+        }
+
+    </style>
+
+<h1>Chapter 10: Nested For Loops Animation</h1>
+
+
+<h3>Given the following MATLAB code: </h3>
+
+<!--
+    <br>
+    A =
+    {{firstRow}}
+    <br>
+    B = {{secondRow}}
+    <br>
+-->
+
+<!--
+    <br>
+
+    for i = 1:1:size(A,1) <br>
+    <p>
+        for j=1:1:size(A,2) <br>
+    </p>
+
+-->
+
+
+<!--<p>
+    <p>
+        <label>
+            <input type="radio" ng-model="color.name" value=#F2DEDE ng-click="opOne()">
+            <i>move</i>(A(i) * A(j))
+        </label><br/>
+        <label>
+            <input type="radio" ng-model="color.name" value = "Green" ng-click="opTwo()">
+            <i>move</i>(A(i) * 2 * A(i))
+        </label><br/>
+        <label>
+            <input type="radio" ng-model="color" value="Blue" ng-click="opThree()">
+            <i>move</i>( (A(i) + A(j)) % 2)
+        </label><br/>
+    </p>
+</p>-->
+
+<!--
+    <p>end</p>
+    end
+<br>
+-->
+    <pre style='color:#000000;background:#ffffff;'>A <span style='color:#0000ff; '>=</span> <span style='color:#0000ff; '>[</span>1<span style='color:#0000ff; '>,</span> 1<span style='color:#0000ff; '>,</span> <span style='color:#0000ff; '>-</span>1<span style='color:#0000ff; '>]</span>
+B <span style='color:#0000ff; '>=</span> <span style='color:#0000ff; '>[</span>1<span style='color:#0000ff; '>,</span> 0<span style='color:#0000ff; '>,</span> 1<span style='color:#0000ff; '>]</span>
+
+<span style='color:#0000ff; font-weight:bold; '>for</span> i <span style='color:#0000ff; '>=</span> 1<span style='color:#0000ff; '>:</span><span style='color:#0000ff; font-weight:bold; '>size</span><span style='color:#0000ff; '>(</span>A<span style='color:#0000ff; '>)</span>
+    <span style='color:#0000ff; font-weight:bold; '>for</span> j <span style='color:#0000ff; '>=</span> 1<span style='color:#0000ff; '>:</span><span style='color:#0000ff; font-weight:bold; '>size</span><span style='color:#0000ff; '>(</span>B<span style='color:#0000ff; '>)</span>
+        value <span style='color:#0000ff; '>=</span>  A<span style='color:#0000ff; '>(</span>i<span style='color:#0000ff; '>)</span> <span style='color:#0000ff; '>*</span> A<span style='color:#0000ff; '>(</span>j<span style='color:#0000ff; '>)</span>
+        move<span style='color:#0000ff; '>(</span>value<span style='color:#0000ff; '>)</span>
+
+    <span style='color:#0000ff; font-weight:bold; '>end</span>
+
+<span style='color:#0000ff; font-weight:bold; '>end</span>
+</pre>
+
+    <h5><i>hints: </i>the ball start position is 0.</h5>
+    <h4><b>1.</b> Guess the final position of the ball after the code is excecuted : <input type="text" ng-model="finalPos"> </h4>
+
+
+    <button class="submit btn btn-info" ng-click = "check()">Check</button>
+    <br>
+    <h4><b>2.</b> Or, click animate to find out!</h4>
+    <button class="submit btn btn-info" ng-click = "start()">Animate!</button><br>
+
+
+
+<br><canvas id="myCanvas" width="1200" height="165">
+
+</canvas>
+
+
+<h2>Logic Table: </h2>
+    <table>
+        <tr>
+            <th>Step number</th>
+            <th><i>A(i)</i></th>
+            <th><i>A(j)</i></th>
+            <th>Move By</th>
+            <th>Logic</th>
+        </tr>
+        <tr ng-repeat = "table in tableArray" ng-if="table.show">
+            <td>{{$index + 1}}</td>
+            <td>{{table.row1}}</td>
+            <td>{{table.row2}}</td>
+            <td>{{table.move}}</td>
+            <td>{{table.logic}}</td>
+        </tr>
+
+    </table>
+
+<script src="../../controllers.js"></script>
+</div>

@@ -1,0 +1,278 @@
+<div ng-controller="Chapter5S7Ctrl" ng-init="show = Random()">
+
+
+
+
+<div ng-show="show ==1">
+
+<h3>Question #1: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = 3.*A</h5>
+
+
+    <input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> error, mismatch colum <br>
+    <input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"><br> 3    6 <br>   9   12 <br>15   18 <br>
+    	<input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> <br> 1    2 <br>   3   4 <br>5   6 <br>
+        <input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"><br> 3    3 <br>  3 3    <br>3 3 <br>
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+<div ng-show="show ==2">
+
+<h3>Question #1: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = 3.*A</h5>
+
+    <input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"><br> 3    3 <br>  3 3    <br>3 3 <br>
+	<input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"><br> 3    6 <br>   9   12 <br>15   18 <br>
+    <input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> error, mismatch colum <br>
+    <input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> <br> 1    2 <br>   3   4 <br>5   6 <br>
+
+
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+<div ng-show="show ==3">
+
+<h3>Question #1: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = 3.*A</h5>
+
+
+
+        	<input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> <br> 1    2 <br>   3   4 <br>5   6 <br>
+        	<input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"><br> 3    3 <br>  3 3    <br>3 3 <br>
+        	<input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"><br> 3    6 <br>   9   12 <br>15   18 <br>
+        	<input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> error, mismatch colum <br>
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+
+
+
+
+<div ng-show="show ==1">
+
+<h3>Question #2: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = A+3</h5>
+
+
+    		<input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> error, mismatch colum <br>
+        	<input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> <br> 1    2 <br>   6   7 <br>5   6 <br>
+        	<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"><br> 4    5 <br>  3 4    <br>5 6<br>
+        	<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"><br> 4    5 <br>   6   7 <br>8   9 <br>
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+<div ng-show="show == 2">
+
+<h3>Question #2: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = A+3</h5>
+
+
+
+    		<input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> <br> 1    2 <br>   6   7 <br>5   6 <br>
+    		<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"><br> 4    5 <br>  3 4    <br>5 6<br>
+        	<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"><br> 4    5 <br>   6   7 <br>8   9 <br>
+        	<input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> error, mismatch colum <br>
+
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+<div ng-show="show ==3 ">
+
+<h3>Question #2: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [1 2; 3 4; 5 6] <br>
+>> B = A+3</h5>
+
+
+			<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"><br> 4    5 <br>   6   7 <br>8   9 <br>
+			<input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> error, mismatch colum <br>
+        	<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"><br> 4    5 <br>  3 4    <br>5 6<br>
+
+        	<input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> <br> 1    2 <br>   6   7 <br>5   6 <br>
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+
+
+<div ng-show="show == 1">
+
+<h3>Question #3: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+
+
+			<input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> error  <br>
+			<input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> None of the above <br>
+        	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"><br> 8    16 <br>  12 4    <br>20 8<br>
+
+        	<input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> <br> 1    1 <br>  1 1    <br>1 1<br> 
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+<div ng-show="show == 2">
+
+<h3>Question #3: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+
+
+			<input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> error  <br>
+        	<input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> <br> 1    1 <br>  1 1    <br>1 1<br> 
+        				<input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> None of the above <br>
+        	        	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"><br> 8    16 <br>  12 4    <br>20 8<br>
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+<div ng-show="show == 3">
+
+<h3>Question #3: </h3>
+<h4>What is B as a result of the following commands?</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+        	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"><br> 8    16 <br>  12 4    <br>20 8<br>
+        	<input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> <br> 1    1 <br>  1 1    <br>1 1<br> 
+        	<input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> None of the above <br>
+        	<input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> error  <br>
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+
+<div ng-show="show == 1">
+
+<h3>Question #4: </h3>
+<h4>Select all options below which create an array named X containing the values: sin(0), sin(45),
+sin(90), sin(135), sin(180).</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+        	<input type="checkbox" ng-model="question4.answer1" ng-init="question4.answer1 = false"><br> >>deg = [0 45 90 135 180]<br> >>X = sind(deg)<br>
+        	<input type="checkbox" ng-model="question4.answer2" ng-init="question4.answer2 = false"><br> >>sind([0 45 90 135 180])<br> 
+        	<input type="checkbox" ng-model="question4.answer3" ng-init="question4.answer3 = false"><br> >>0:4<br> >>sind(45.*k)<br>
+        	<input type="checkbox" ng-model="question4.answer4" ng-init="question4.answer4 = false"> error<br> 
+
+    <button type="button" ng-click="CheckQ4()">Submit</button> 
+    {{resultq4}}
+
+</div>
+<div ng-show="show == 2">
+
+<h3>Question #4: </h3>
+<h4>Select all options below which create an array named X containing the values: sin(0), sin(45),
+sin(90), sin(135), sin(180).</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+        	<input type="checkbox" ng-model="question4.answer1" ng-init="question4.answer1 = false"><br> >>X = sind(0:45:180)<br> >>X = sind(deg)<br>
+
+        	<input type="checkbox" ng-model="question4.answer4" ng-init="question4.answer4 = false"> error<br> 
+        	<input type="checkbox" ng-model="question4.answer2" ng-init="question4.answer2 = false"> <br>>>deg = 0:45:180<br> >>X = sin(deg.*pi./180)<br>
+        	<input type="checkbox" ng-model="question4.answer3" ng-init="question4.answer3 = false"> <br>>>0:4<br> >>sind(45.*k)<br>
+
+    <button type="button" ng-click="CheckQ4()">Submit</button> 
+    {{resultq4}}
+
+</div>
+<div ng-show="show == 3">
+
+<h3>Question #4: </h3>
+<h4>Select all options below which create an array named X containing the values: sin(0), sin(45),
+sin(90), sin(135), sin(180).</h4> 
+<h5>>> A = [4 8; 6 2; 10 4] <br>
+>> B = A./(2.*[2 4 3; 1 5 2])</h5>
+<input type="checkbox" ng-model="question4.answer4" ng-init="question4.answer4 = false"> error<br> 
+<input type="checkbox" ng-model="question4.answer1" ng-init="question4.answer1 = false"><br> >>0:4<br> >>sind(45.*k)<br>
+
+        	<input type="checkbox" ng-model="question4.answer3" ng-init="question4.answer3 = false"><br> >>deg = [0 45 90 135 180]<br> 
+        	<input type="checkbox" ng-model="question4.answer2" ng-init="question4.answer2 = false"> <br>>>sind([0 45 90 135 180])<br>
+
+
+    <button type="button" ng-click="CheckQ4()">Submit</button> 
+    {{resultq4}}
+
+</div>
+
+
+<div>
+  
+      <div ng-controller="codeCtrlC5S7">
+      <h3>Question #5: </h3>
+      <h4>  In Matlab syntax,perform the following transformation: </h4> 
+      <b>A =</b>
+      <div  ng-bind-html="question" >
+
+      {{question}}  
+       </div>
+
+       <h4>TO:</h4>
+     <b>B =</b>
+
+        <div   ng-bind-html="tquestion" style="margin:0">
+
+        {{tquestion}}  
+       </div>
+
+
+                 
+
+
+          <div ng-show="textInput">
+            <!-- Textbox Input options -->
+
+            <div ng-model="textField" ui-ace="aceOptions" style=" height:300px; width:auto;" data-ng-init="GetSolution()" placeholder="Enter MATLAB code here."></div><br>
+            <input class="btn btn-success" type="submit" ng-click="sendCode();CheckAnswer();" value="Execute"></input>
+            <div ng-hide="errorHide" class="alert alert-danger"><strong>Errors</strong><br> {{ error }}</div>
+            <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warnings</strong><br> {{ warning }}</div>
+<!--             <div  class="alert" style="white-space: pre;"><strong>Result: </strong><br> {{ Results }}</div> -->
+            <div ng-hide ="resHide" ><strong>{{ respond }}</strong></div>
+          </div>
+
+
+
+
+
+          <div ng-hide="textInput">
+            <!-- File I/O options -->
+            <!-- TODO: PARSE file as string on client side then post -->
+            <h4>FILE</h>
+          </div>
+      </div><br>
+</div>
+
+</div>

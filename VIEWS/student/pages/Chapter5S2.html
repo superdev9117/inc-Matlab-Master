@@ -1,0 +1,212 @@
+<div ng-controller="Chapter5S2Ctrl" ng-init="show = Random()">
+
+
+
+
+<div ng-show="show == 1">
+
+<h3>Question #1: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3</h5>
+
+
+    <input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> A = 2.0000    2.3000    2.6000  <br>
+    <input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000 <br>
+    	<input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> A = 2.0000    2.3000   2.9000 <br>
+        <input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"> A = 2.0000    2.3000    2.6000    2.9000   3.1000 <br>
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+<div ng-show="show == 2">
+
+<h3>Question #1: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3</h5>
+
+	<input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> A = 2.0000    2.3000   2.9000 <br>
+    <input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> A = 2.0000    2.3000    2.6000  <br>
+    <input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000 <br>
+    <input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"> A = 2.0000    2.3000    2.6000    2.9000   3.1000 <br>
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+<div ng-show="show == 3">
+
+<h3>Question #1: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3</h5>
+
+	<input type="checkbox" ng-model="question1.answer4" ng-init="question1.answer4 = false"> A = 2.0000    2.3000   2.9000 <br>
+	<input type="checkbox" ng-model="question1.answer1" ng-init="question1.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000 <br>
+	<input type="checkbox" ng-model="question1.answer2" ng-init="question1.answer2 = false"> A = 2.0000    2.3000    2.6000    2.9000   3.1000 <br>
+    <input type="checkbox" ng-model="question1.answer3" ng-init="question1.answer3 = false"> A = 2.0000    2.3000    2.6000  <br>
+
+
+    <button type="button" ng-click="CheckQ1()">Submit</button> 
+    {{resultq1}}
+
+</div>
+
+
+
+
+<div ng-show="show == 1">
+
+<h3>Question #2: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3.33</h5>
+
+	<input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.1000 <br>
+	<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.2000  <br>
+	<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"> A = 2.0000    2.3000    2.5000    2.9000   3.1000 <br>
+    <input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> A = error  <br>
+
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+<div ng-show="show == 2">
+
+<h3>Question #2: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3.33</h5>
+
+
+    <input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> A = error  <br>
+<input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.1000 <br>
+	<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"> A = 2.0000    2.3000    2.5000    2.9000   3.1000 <br>
+		<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.2000  <br>
+
+
+
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+<div ng-show="show == 3">
+
+<h3>Question #2: </h3>
+<h4>Select the option below which results from the following MATLAB commands. Assume that no
+variables are present in the workspace before the commands are typed.</h4> <h5>
+>> A = 2:0.3:3.33</h5>
+
+
+	    <input type="checkbox" ng-model="question2.answer3" ng-init="question2.answer3 = false"> A = error  <br>
+	    <input type="checkbox" ng-model="question2.answer4" ng-init="question2.answer4 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.1000 <br>
+	    	<input type="checkbox" ng-model="question2.answer2" ng-init="question2.answer2 = false"> A = 2.0000    2.3000    2.5000    2.9000   3.1000 <br>
+	<input type="checkbox" ng-model="question2.answer1" ng-init="question2.answer1 = false"> A = 2.0000    2.3000    2.6000    2.9000    3.2000  <br>
+
+
+
+    <button type="button" ng-click="CheckQ2()">Submit</button> 
+    {{resultq2}}
+
+</div>
+
+
+<div ng-show="show == 1">
+
+<h3>Question #3: </h3>
+<h4>Select all options below which will create the array:</h4>
+
+
+	    <input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> >> A = 0.1:0.3:1.2  <br>
+	    <input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> >> A = [0.1 0.4 0.7 1.0] <br>
+	    	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"> >> A = [0.1,0.4,0.7,1] <br>
+	<input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> All of the above  <br>
+
+
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+
+<div ng-show="show == 2">
+
+<h3>Question #3: </h3>
+<h4>Select all options below which will create the array:</h4>
+
+
+
+	        	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"> >> A = [0.1,0.4,0.7,1] <br>
+	    <input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> All of the above  <br>
+	    <input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> >> A = [0.1 0.4 0.7 1.0] <br>
+	    <input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> >> A = 0.1:0.3:1.2  <br>
+
+
+
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+<div ng-show="show == 3">
+
+<h3>Question #3: </h3>
+<h4>Select all options below which will create the array:</h4>
+
+
+
+	    	<input type="checkbox" ng-model="question3.answer2" ng-init="question3.answer2 = false"> >> A = [0.1,0.4,0.7,1] <br>
+	<input type="checkbox" ng-model="question3.answer4" ng-init="question3.answer4 = false"> >> A = [0.1 0.4 0.7 1.0] <br>
+	<input type="checkbox" ng-model="question3.answer1" ng-init="question3.answer1 = false"> All of the above  <br>
+	<input type="checkbox" ng-model="question3.answer3" ng-init="question3.answer3 = false"> >> A = 0.1:0.3:1.2  <br>
+
+
+
+    <button type="button" ng-click="CheckQ3()">Submit</button> 
+    {{resultq3}}
+
+</div>
+
+<div>
+  
+      <div ng-controller="codeCtrl">
+      <h3>Question #4: </h3>
+       <h4>  In Matlab syntax, write a segment to produce the following: </h4> <h5> {{question}} </h5>
+                 
+
+
+          <div ng-show="textInput">
+            <!-- Textbox Input options -->
+
+            <div ng-model="textField" ui-ace="aceOptions" style=" height:300px; width:auto;" data-ng-init="GetSolution()" placeholder="Enter MATLAB code here."></div><br>
+            <input class="btn btn-success" type="submit" ng-click="sendCode();" value="Execute"></input>
+            <div ng-hide="errorHide" class="alert alert-danger"><strong>Errors</strong><br> {{ error }}</div>
+            <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warnings</strong><br> {{ warning }}</div>
+<!--             <div  class="alert" style="white-space: pre;"><strong>Result: </strong><br> {{ Results }}</div> -->
+            <div ng-hide ="resHide" ><strong>{{ respond }}</strong></div>
+          </div>
+
+
+
+
+
+          <div ng-hide="textInput">
+            <!-- File I/O options -->
+            <!-- TODO: PARSE file as string on client side then post -->
+            <h4>FILE</h>
+          </div>
+      </div><br>
+</div>
+
+
+</div>

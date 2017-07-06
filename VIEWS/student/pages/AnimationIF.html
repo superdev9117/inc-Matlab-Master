@@ -1,0 +1,118 @@
+<div ng-controller="AnimationIFCtrl">
+    <style>
+        table, th, td {
+            border: 2px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        pre {
+
+            width: 800px;
+        }
+
+    </style>
+
+    <h1>Chapter 10: Nested For Loops Animation</h1>
+
+
+    <h3>Given the following MATLAB code: </h3>
+
+
+<pre style='color:#000000;background:#ffffff;'>a <span style='color:#0000ff; '>=</span> 6<span
+        style='color:#0000ff; '>;</span>  b <span style='color:#0000ff; '>=</span> 3<span
+        style='color:#0000ff; '>;</span>  c <span style='color:#0000ff; '>=</span> 1<span
+        style='color:#0000ff; '>;</span>  d <span style='color:#0000ff; '>=</span> 3<span
+        style='color:#0000ff; '>;</span>  e <span style='color:#0000ff; '>=</span> <span
+        style='color:#0000ff; '>-</span>4<span style='color:#0000ff; '>;</span>
+
+
+x <span style='color:#0000ff; '>=</span> 1<span style='color:#0000ff; '>;</span>
+
+<span style='color:#0000ff; font-weight:bold; '>if</span> <span style='color:#0000ff; '>(</span>a<span
+            style='color:#0000ff; '>&lt;</span><span style='color:#0000ff; '>=</span>b <span style='color:#0000ff; '>&amp;</span> c<span
+            style='color:#0000ff; '>&lt;</span>d<span style='color:#0000ff; '>)</span>
+
+    x <span style='color:#0000ff; '>=</span> <span style='color:#0000ff; '>-</span>3<span
+            style='color:#0000ff; '>;</span>
+    move <span style='color:#0000ff; '>(</span><span style='color:#0000ff; '>-</span>x<span
+            style='color:#0000ff; '>)</span>
+    move<span style='color:#0000ff; '>(</span>b<span style='color:#0000ff; '>)</span>
+
+<span style='color:#0000ff; font-weight:bold; '>elseif</span> b<span style='color:#0000ff; '>&lt;</span>c <span
+            style='color:#0000ff; '>|</span> c<span style='color:#0000ff; '>&lt;</span>d
+
+    x <span style='color:#0000ff; '>=</span> 1<span style='color:#0000ff; '>;</span>
+    move <span style='color:#0000ff; '>(</span><span style='color:#0000ff; '>-</span>x<span
+            style='color:#0000ff; '>)</span>
+    move<span style='color:#0000ff; '>(</span>a<span style='color:#0000ff; '>)</span>
+
+<span style='color:#0000ff; font-weight:bold; '>elseif</span> d<span style='color:#0000ff; '>></span><span
+            style='color:#0000ff; '>=</span>c
+
+    x <span style='color:#0000ff; '>=</span> -2<span style='color:#0000ff; '>;</span>
+    move <span style='color:#0000ff; '>(</span><span style='color:#0000ff; '>-</span>x<span
+            style='color:#0000ff; '>)</span>
+    move<span style='color:#0000ff; '>(</span>c<span style='color:#0000ff; '>)</span>
+
+<span style='color:#0000ff; font-weight:bold; '>else</span>
+
+    x <span style='color:#0000ff; '>=</span> 0<span style='color:#0000ff; '>;</span>
+    move <span style='color:#0000ff; '>(</span><span style='color:#0000ff; '>-</span>x<span
+            style='color:#0000ff; '>)</span>
+    move<span style='color:#0000ff; '>(</span>d<span style='color:#0000ff; '>)</span>
+
+<span style='color:#0000ff; font-weight:bold; '>end</span>
+</pre>
+
+    <h5><i>hints: </i>the ball start position is 0.</h5>
+    <h4><b>1.</b> Guess the final position of the ball after the code is excecuted : <input type="text"
+                                                                                            ng-model="finalPos"></h4>
+
+
+    <button class="submit btn btn-info" ng-click="ifcheck()">Check</button>
+    <br>
+    <h4><b>2.</b> Or, click animate to find out!</h4>
+    <button class="submit btn btn-info" ng-click="start()">Animate!</button>
+    <br><br>
+
+
+    <canvas id="myCanvas" width="1200" height="165">
+
+    </canvas>
+    <br>
+
+    <h2>Logic Table: </h2>
+    <table >
+        <tr>
+            <th>Step number</th>
+            <th><i>a</i></th>
+            <th><i>b</i></th>
+            <th>c</th>
+            <th>d</th>
+            <th>e</th>
+            <th>x</th>
+        </tr>
+        <!--ng-if="table.status"-->
+        <tr ng-if="display()"ng-repeat="table in iftableArray">
+            <td>{{$index + 1}}</td>
+            <td>{{table.one}}</td>
+            <td>{{table.two}}</td>
+            <td>{{table.three}}</td>
+            <td>{{table.four}}</td>
+            <td>{{table.five}}</td>
+            <td>{{table.x}}</td>
+        </tr>
+
+    </table>
+
+    <script src="../../controllers.js"></script>
+</div>

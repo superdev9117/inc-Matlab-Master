@@ -1,0 +1,33 @@
+<div ng-controller="moduleController as mc">
+    <div class="col-xs-0">
+        <h2 class="page-header">{{module.title}}</h2>
+    </div>
+    <h5 ng-if="module.sub.length" ng-repeat="s in module.sub">{{s}}<br></h5>
+    
+    <hr>
+
+    <div class="col-xs-0">
+        <input class="btn btn-default"
+               ng-if="module.ans.length"
+               ng-repeat="a in module.ans"
+               type="button"
+               style="margin-right: 15px"
+               value="{{a}}"
+               id = "{{a}}"
+               ng-click="onAnswerPress(a)"/>
+    </div>
+    <hr>
+    <div id="submission">
+      <button class="btn btn-primary" ng-click="onSubmit(module.id)">Submit!</button>
+    </div>
+    <div class="alert alert-warning" role="alert" id="errors">
+      {{errors}}
+    </div>
+    <div>
+      <p>What can I see?<br>{{sight}}</p>
+      <div ng-repeat="for (key, value) in sight.submitted">{{key}} + {{value}}<br></div>
+    </div>
+    
+    <hr class="thickSep">
+</div>
+

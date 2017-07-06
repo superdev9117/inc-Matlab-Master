@@ -1,0 +1,17 @@
+<div ng-controller="Grid" id="{{elements[i]._id}}">
+  <div ng-init="createNewGrid()"></div>
+  <input type="text" ng-model="x[0]" ng-change="createNewGrid()">
+  <input type="text" ng-model="x[1]" ng-change="createNewGrid()">
+  <table border="1">
+    <tr ng-repeat="row in grid.rows" style="">
+     <td ng-repeat="spot in row.spots" style="height: 50px; width: 50px;" ng-style="{\'background-color\': spot.color}"></td>
+    </tr>
+  </table><br>
+  <textarea rows="10" cols="50" ng-model="text_Code" ng-change="elements[ i ].input=text_Code" ng-trim="false" ng-list="&#10;"></textarea><br>
+  <button class="submit btn btn-danger" ng-click="grid_Submit()">Submit</button>
+  <h4><span>{{item}}</span></h4> {{elements[ i ].input}}
+  <div ng-class="class" ng-hide="alert">
+    <strong>{{Submit}}</strong> {{submit_Message}}
+  </div> 
+</div>
+<!-- $$A=\\left(\\begin{array}{cc}1 & 2 \\\\3 & 5\\end{array}\\right).$$ -->

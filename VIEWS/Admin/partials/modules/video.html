@@ -1,0 +1,10 @@
+<div ng-controller="videoController">
+  <iframe width="560" height="315" 
+    src="{{youtube}}" 
+    frameborder="0" allowfullscreen>
+  </iframe>
+  <div>
+    <p>What can I see?<br>{{sight}}</p>
+    <div ng-repeat="for (key, value) in sight.submitted">{{key}} + {{value}}<br></div>
+  </div>
+</div>

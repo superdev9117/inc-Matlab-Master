@@ -1,0 +1,73 @@
+
+//save this incase we need it for something else.  do not delete
+//else im going to ninja kick u.
+
+<div>
+
+    <h3>10. The code shown below is saved in the current working directory with the file name <b><i>fun2.m</i></b>.</h3>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#0000ff; font-weight:bold; '>function</span> <span style='color:#0000ff; '>[</span>y<span style='color:#0000ff; '>]</span> <span style='color:#0000ff; '>=</span> fun2<span style='color:#0000ff; '>(</span>var1<span style='color:#0000ff; '>)</span>
+var2 <span style='color:#0000ff; '>=</span> 2<span style='color:#0000ff; '>.</span><span style='color:#0000ff; '>*</span>var1 <span style='color:#0000ff; '>+</span> 1<span style='color:#0000ff; '>;</span>
+y <span style='color:#0000ff; '>=</span> var1 <span style='color:#0000ff; '>+</span> var2<span style='color:#0000ff; '>;</span>
+</pre>
+
+    <h4>The following commands are typed at the command prompt (you may assume that no other
+        variables are defined in the MATLAB workspace prior to typing the commands below):</h4>
+
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span> var2 <span style='color:#0000ff; '>=</span> 2<span style='color:#0000ff; '>;</span>
+<span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span>out <span style='color:#0000ff; '>=</span> fun2<span style='color:#0000ff; '>(</span>var2<span style='color:#0000ff; '>)</span><span style='color:#0000ff; '>;</span>
+<span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span> y <span style='color:#0000ff; '>=</span> out <span style='color:#0000ff; '>+</span> var1<span style='color:#0000ff; '>;</span>
+</pre>
+
+    <h4>What is y resulting from the above commands?  If an error results from the above commands,
+        briefly explain the source of the error.</h4>
+
+    <form id="mcqFive">
+        <input type="radio" name="answers" value="1">  Error, argument names sent to function are inconsistent, it’s var1 in function, var2
+        in workspace.  (Hint: names don’t matter, it’s the order in the list.)<br>
+        <input type="radio" name="answers" value="2">  9  (Hint: function doesn’t affect value of var1 in the workspace)<br>
+        <input type="radio" name="answers" value="3"> 12  (Hint: function doesn’t affect value of var1 in the workspace)<br>
+        <input type="radio" name="answers" value="4">  Error; argument names returned from function are not consistent since y not same
+        as out.  (Hint: names don’t matter, its the order in the list.)<br>
+        <input type="radio" name="answers" value="5">  Error  (var1 is not defined in the workspace.)<br>
+        <input id="submitfive" type="submit" value="Submit" onclick="mcqfive()">
+    </form>
+
+    <div id="mcqfivehintbox"></div>
+    <br>
+
+    <h3>11. The code shown below is saved in the current working directory with the file name <b><i>fun2.m</i></b>.</h3>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#0000ff; font-weight:bold; '>function</span> y <span style='color:#0000ff; '>=</span> myfunction<span style='color:#0000ff; '>(</span>x<span style='color:#0000ff; '>)</span>
+y <span style='color:#0000ff; '>=</span> 3<span style='color:#0000ff; '>.</span><span style='color:#0000ff; '>*</span>x <span style='color:#0000ff; '>+</span> var<span style='color:#0000ff; '>;</span>
+</pre>
+
+    <h4>The following commands are typed at the command prompt:</h4>
+
+<pre style='color:#000000;background:#ffffff;'><span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span> var <span style='color:#0000ff; '>=</span> 3<span style='color:#0000ff; '>;</span>
+<span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span> x <span style='color:#0000ff; '>=</span> 2<span style='color:#0000ff; '>;</span>
+<span style='color:#0000ff; '>></span><span style='color:#0000ff; '>></span> var2 <span style='color:#0000ff; '>=</span> myfunction<span style='color:#0000ff; '>(</span>var<span style='color:#0000ff; '>)</span><span style='color:#0000ff; '>;</span>
+</pre>
+
+    <h4>What is var2 resulting from the above commands?  If an error results from the above
+        commands, briefly explain the source of the error.</h4>
+
+    <form id="mcqSix">
+        <input type="radio" name="answers" value="1">  Error, the output variable names returned from the function are inconsistent.
+        (Hint: names don’t matter, it’s the order in the list.)<br>
+        <input type="radio" name="answers" value="2">  Error, the function name is not the same as the file name.  (Hint: It is good
+        practice to make the names match, but not required.  MATLAB will use the FILE name)<br>
+        <input type="radio" name="answers" value="3"> var2 = 9  (Hint: the value of var and x in the base workspace do not affect their
+        values in the function’s workspace.)<br>
+        <input type="radio" name="answers" value="4">  var2 = 12  (Hint: the value of var and x in the base workspace do not affect their
+        values in the function’s workspace.)<br>
+        <input type="radio" name="answers" value="5">  Error, the function and file names are inconsistent and the command prompt uses
+        the function name rather than the file name.<br>
+        <input id="submitsix" type="submit" value="Submit" onclick="mcqsix()">
+    </form>
+
+    <div id="mcqsixinbox"></div>
+    <br>
+
+
+
+
+</div>

@@ -1,0 +1,158 @@
+<div ng-controller="tableController" id="wrapper">
+	<div>
+		<div ng-if="enable[0]">
+			<h3>10.6 What is the variable junk as the result of the code fragment below? </h3>
+			<pre class="code" style='color:#000000;background:#ffffff;'>a <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span> <span style='color:#008c00; '>1</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+b <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>3</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span> <span style='color:#008c00; '>2</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+junk <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>for</span> k <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>:</span><span style='color:#008c00; '>3</span>
+   junk <span style='color:#808030; '>=</span> junk <span style='color:#808030; '>+</span> a<span style='color:#808030; '>(</span><span style='color:#008c00; '>4</span><span style='color:#808030; '>-</span>k<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span><span style='color:#808030; '>*</span>b<span style='color:#808030; '>(</span>k<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+end
+</pre>
+		</div>
+
+		<div ng-if="enable[1]">
+		<h3>10.5 What is out after the code executes?</h3>
+			<!-- Example 2 -->	
+<pre class="code" style='color:#000000;background:#ffffff;'>nrow <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span>  <span style='color:#008c00; '>3</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+ncol <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>3</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+x <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>5</span>   <span style='color:#808030; '>-</span><span style='color:#008c00; '>3</span>   <span style='color:#008c00; '>0</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>4</span>   <span style='color:#008c00; '>7</span>   <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+y <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>4</span>   <span style='color:#008c00; '>6</span>  <span style='color:#008c00; '>8</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>for</span> m <span style='color:#808030; '>=</span> nrow
+    <span style='color:#800000; font-weight:bold; '>for</span> n <span style='color:#808030; '>=</span> ncol
+        out<span style='color:#808030; '>(</span>m<span style='color:#808030; '>,</span>n<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span> x<span style='color:#808030; '>(</span>m<span style='color:#808030; '>)</span><span style='color:#808030; '>+</span>y<span style='color:#808030; '>(</span>n<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    end
+end
+</pre>
+		</div>
+
+
+<div ng-if="enable[2]">
+	<h3>10.7 What is count as a result of the given Matlab code fragment?</h3>
+	<!-- Example 3 -->
+<pre class="code" style='color:#000000;background:#ffffff;'>x <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>2</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>3</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>5</span>  <span style='color:#008c00; '>0</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+count <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>for</span> index <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>:</span> length<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span>
+    <span style='color:#800000; font-weight:bold; '>if</span> x<span style='color:#808030; '>(</span>index<span style='color:#808030; '>)</span> <span style='color:#808030; '>></span><span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
+        count <span style='color:#808030; '>=</span> count <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+    end
+end
+</pre>
+</div>
+
+<div ng-if="enable[3]">
+<h3>
+	10.2 What value does the variable y have as the result of the given code?
+</h3>
+	<!-- Example 4 -->
+	<pre class="code" style='color:#000000;background:#ffffff;'>var <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>-</span><span style='color:#008c00; '>3</span>   <span style='color:#008c00; '>4</span>   <span style='color:#008c00; '>5</span>  <span style='color:#008c00; '>0</span>   <span style='color:#008c00; '>6</span>   <span style='color:#008c00; '>1</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>8</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+x <span style='color:#808030; '>=</span> <span style='color:#008c00; '>3</span><span style='color:#800080; '>;</span>
+index <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>while</span> x<span style='color:#808030; '>></span><span style='color:#008c00; '>0</span>
+    y<span style='color:#808030; '>(</span>index<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span> var<span style='color:#808030; '>(</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    index <span style='color:#808030; '>=</span> index <span style='color:#808030; '>+</span> <span style='color:#008c00; '>2</span><span style='color:#800080; '>;</span>
+    x <span style='color:#808030; '>=</span> x <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+end
+y<span style='color:#808030; '>(</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>6</span><span style='color:#800080; '>;</span>
+</pre>
+</div>
+	
+<div ng-if="enable[4]">
+	<!-- Example 5 -->
+<h3>10.8 What is count as a result of the given Matlab code fragment?</h3>
+<pre class="code" style='color:#000000;background:#ffffff;'>numbers <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>2</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>4</span>  <span style='color:#008c00; '>3</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>5</span>  <span style='color:#008c00; '>1</span>  <span style='color:#008c00; '>0</span>  <span style='color:#008c00; '>3</span>  <span style='color:#808030; '>-</span><span style='color:#008c00; '>6</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+count <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+index <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>while</span> numbers<span style='color:#808030; '>(</span>index<span style='color:#808030; '>)</span> <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span>
+    count <span style='color:#808030; '>=</span> count <span style='color:#808030; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+    index <span style='color:#808030; '>=</span> index <span style='color:#808030; '>+</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+end
+</pre>
+</div>
+
+<div ng-if="enable[5]">
+	<!-- Example 6 -->
+<h3>10.4 What is z after the code below executes?</h3>
+<pre class="code" style='color:#000000;background:#ffffff;'>x <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>5</span>   <span style='color:#808030; '>-</span><span style='color:#008c00; '>3</span>   <span style='color:#008c00; '>0</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>4</span>   <span style='color:#008c00; '>5</span>   <span style='color:#008c00; '>3</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+y <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span>   <span style='color:#008c00; '>2</span>   <span style='color:#008c00; '>4</span>   <span style='color:#008c00; '>6</span>   <span style='color:#008c00; '>8</span>   <span style='color:#008c00; '>10</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+k <span style='color:#808030; '>=</span> <span style='color:#008c00; '>7</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>while</span>  x<span style='color:#808030; '>(</span>k<span style='color:#808030; '>)</span> <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span>
+    z<span style='color:#808030; '>(</span>k<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span> y<span style='color:#808030; '>(</span>x<span style='color:#808030; '>(</span>k<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    k <span style='color:#808030; '>=</span> k<span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+end
+</pre>
+</div>
+
+<div ng-if="enable[6]">
+<h3>Evaluate and fill the table below. Enter the resulting x value  after the code below executes.</h3>
+	<pre class="code" style='color:#000000;background:#ffffff;'>a <span style='color:#808030; '>=</span> 6<span style='color:#808030; '>;</span>  b <span style='color:#808030; '>=</span> 3<span style='color:#808030; '>;</span>  c <span style='color:#808030; '>=</span> 1<span style='color:#808030; '>;</span>  d <span style='color:#808030; '>=</span> 3<span style='color:#808030; '>;</span>  e <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span>4<span style='color:#808030; '>;</span>
+ 
+x <span style='color:#808030; '>=</span> 1<span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>a<span style='color:#808030; '>&lt;</span><span style='color:#808030; '>=</span>b <span style='color:#808030; '>&amp;</span> c<span style='color:#808030; '>&lt;</span>d<span style='color:#808030; '>)</span>
+    x <span style='color:#808030; '>=</span> 3<span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>elseif</span> b<span style='color:#808030; '>&lt;</span>c <span style='color:#808030; '>|</span> c<span style='color:#808030; '>&lt;</span>d
+    x <span style='color:#808030; '>=</span> 1<span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>elseif</span> d<span style='color:#808030; '>></span><span style='color:#808030; '>=</span>c
+    x <span style='color:#808030; '>=</span> 2<span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>else</span>
+    x <span style='color:#808030; '>=</span> 0<span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>end</span>
+</pre>
+</div>
+
+
+	</div>
+	<br>
+	<div class="table-wrapper">
+		<div>
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<!-- Repeat over key values to pull out first row for label values -->
+						<th ng-repeat="(key, value) in table[0]">{{ value }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Repeate over table row objects and track by index (skip on index 0) -->
+					<tr ng-repeat="row in table track by $index" ng-if="$index > 0" class="math">
+						<!-- Reserved step cell -->
+					    <td class="button-cell" ng-if="$index > 0">{{ row.step }}</td>
+
+					    <!-- Repeat over key value  -->
+					    <td ng-repeat="(key, value) in row" ng-if="$index > 0 && key != 'result' && condCheck != true"><input type="text" class="tableInput focus" ng-model="row[key]"></td>
+
+					    <td ng-repeat="(key, value) in row" ng-if="key ==  'cond1' || key == 'cond2' || key == 'cond3' && key != 'x'">
+					    	<select ng-model="row[key]">
+							  <option value='true'>True</option>
+							  <option value='false'>False</option>
+							</select>
+					    </td>
+
+					    <!-- Repeat over key value  -->
+					    <td ng-repeat="(key, value) in row" ng-if="$index > 0 && key != 'result' && key == 'x' && condCheck == true"><input type="text" class="tableInput focus"  ng-model="row[key]"></td>
+	                	
+	                	<!-- Reserved button cell -->
+	                	<td class="button-cell">
+	                		<!-- Use index to check against correct answer -->
+	                  		<button class="btn btn-info" ng-if="$index > 0" ng-click="check($index)" title="You must fill every row to check.">Check</button>
+	                  		<!-- Used to fill in the correct answers for that row -->
+	                  		<button class="btn btn-warning" ng-if="$index > 0" ng-click="fill($index)" title="To enable fill after a few attempts try viewing some reference material and trying again.">Fill</button>
+	                	</td>
+
+	                	<!-- Reserved for result cell -->
+	                	<td id="result" ng-if="$index > 0" style="width:20px; max-height:10px;"><!--style="background-color: {{ table[$index].result }}"-->
+                            <div class="alert alert-success" style="padding:5px 5px 5px 5px; margin-bottom:0px;" ng-if="correct[$index]"><strong>Correct!</strong></div>
+                            <div class="alert alert-danger"  style="padding:5px 5px 5px 5px; margin-bottom:0px;" ng-if="incorrect[$index]"><strong>Wrong!</strong></div>
+                            <div class="alert alert-warning" style="padding:5px 5px 5px 5px; margin-bottom:0px;" ng-if="neither[$index]"><strong>Filled!</strong></div>
+	                	</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- Complete Msg -->
+          	<div class="alert alert-success" ng-if="done">
+			  <strong>Success:</strong> Tutorial Complete!
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="panel panel-default" ng-controller="exampleController">
+  <div class="panel-body">
+      <h2 class="page-header"><a href="/pages/student.htm">Assignment 2 (10 pts)</a></h2>
+      
+      <div ng-hide="showVideo">
+        <h2><small>Watch the video and answer the following questions</small></h2>
+        <div ng-controller="videoController">
+  		    <iframe width="560" height="315" 
+  		      src="https://www.youtube.com/embed/5cq0H1zhe8M" 
+  		      frameborder="0" allowfullscreen>
+  		    </iframe>
+        </div>
+      </div>
+      <div>
+		      <h3>If you have a code statement you would like to do over and over you should probably use a...</h3><br>
+		      <button ng-click="exampleController.toggleCorrect()">Correct</button>
+		      <button ng-click="toggleCorrect()">Wrong</button>
+		      <h3>When you want code to run only under certain conditions you should use...</h3><br>
+		      <button ng-click="toggleCorrect()">Correct</button>
+		      <button ng-click="toggleCorrect()">Wrong</button>
+		      <h3>Is there a difference fundementally between a while and for loop?</h3><br>
+		      <button ng-click="toggleCorrect()">Correct</button>
+		      <button ng-click="toggleCorrect()">Wrong</button>
+		      <h3>If you have a code statement you would like to do over and over you should probably use a...</h3><br>
+		      <button ng-click="toggleCorrect()">Correct</button>
+		      <button ng-click="toggleCorrect()">Wrong</button>
+		      <h3>If you have a code statement you would like to do over and over you should probably use a...</h3><br>
+		      <button ng-click="toggleCorrect()">Correct</button>
+		      <button ng-click="toggleCorrect()">Wrong</button>
+		  </div>
+	 </div>
+</div>

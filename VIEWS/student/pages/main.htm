@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<header>
+    <title>Assignments</title>
+    <!--<link rel="stylesheet" href="/css/simplex.css">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
+    <script src="http://angular-ui.github.io/ui-ace/dist/ui-ace.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//cdn.rawgit.com/angular-ui/bower-ui-grid/v3.0.6/ui-grid.min.js"></script>
+    <div ace>
+        <script src="https://rawgithub.com/ajaxorg/ace-builds/v1.1.1/src-min-noconflict/ace.js"></script>
+        <script src="https://rawgithub.com/angular-ui/ui-ace/bower/ui-ace.min.js"></script>
+    </div>
+    <style>
+    code {
+        background-color: #e2ece5;
+        color: black;
+        font-size: 80%;
+        position: relative;
+        top: 0;
+        left: 1%;
+    }
+    
+    .sideBar li:hover {
+        background-color: #DFDFDF;
+    }
+    
+    .sideBar a:hover {
+        text-decoration: none;
+    }
+    
+    .sideBar {
+        margin-top: 10%;
+        position: fixed;
+        right: 0;
+        width: 250px;
+    }
+    
+    #tutorial {
+        cursor: pointer;
+    }
+    
+    .code {
+        max-width: 75%;
+        box-shadow: 4px 4px 2px #888888;
+    }
+    
+    li {
+        cursor: pointer;
+    }
+    
+    .table-wrapper {
+        max-width: 75%;
+    }
+    
+    @import url(http://fonts.googleapis.com/css?family=Nunito);
+    /*Basic reset*/
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: Nunito, arial, verdana;
+    }
+    
+    #vertical-menu-display {
+        position: fixed;
+        top: 90%;
+        right: 2%;
+    }
+    
+    #vertical-menu {
+        width: 250px;
+        margin: 100px auto 0 auto;
+        position: fixed;
+        top: 50%;
+        right: 1%;
+        max-height: 250px;
+        overflow-y: scroll;
+        border-style: solid;
+        /*box-shadow:
+                    0 5px 15px 1px rgba(0, 0, 0, 0.6),
+                    0 0 200px 1px rgba(255, 255, 255, 0.5);*/
+    }
+    /*heading styles*/
+    
+    #vertical-menu h3 {
+        font-size: 12px;
+        line-height: 34px;
+        padding: 0 10px;
+        cursor: pointer;
+        /*fallback for browsers not supporting gradients*/
+        background: #003040;
+        background: linear-gradient(#003040, #002535);
+    }
+    /*heading hover effect*/
+    
+    #vertical-menu h3:hover {
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+    }
+    /*iconfont styles*/
+    
+    #vertical-menu h3 span {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    /*list items*/
+    
+    #vertical-menu li {
+        list-style-type: none;
+    }
+    /*links*/
+    
+    #vertical-menu ul ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 11px;
+        line-height: 27px;
+        display: block;
+        padding: 0 15px;
+        /*transition for smooth hover animation*/
+        transition: all 0.15s;
+    }
+    /*hover effect on links*/
+    
+    #vertical-menu ul ul li a:hover {
+        background: #003545;
+        /*border-left: 5px solid lightgreen;*/
+    }
+    /*Lets hide the non active LIs by default*/
+    
+    #vertical-menu ul ul {
+        display: none;
+    }
+    
+    #vertical-menu li.active ul {
+        display: block;
+    }
+    
+    .video {
+        width: 600px;
+        height: 400px;
+        border-style: dotted;
+    }
+    
+    .grid {
+        width: 500px;
+        height: 250px;
+    }
+    
+    .grid1 {
+        width: 600px;
+        height: 300px;
+        border-style: dotted;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 75%;
+        box-shadow: 4px 4px 2px #888888;
+    }
+    
+    th,
+    td {
+        text-align: center;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    a.fill-li {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+    }
+    
+    input[type="text"] {
+        display: inline;
+        margin: 0;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+    }
+    
+    input[type="text"]:focus {
+        outline: none;
+    }
+    
+    .styleText input[type="text"] {
+        padding: 5px;
+        border: solid 1px #fff;
+        box-shadow: inset 1px 1px 2px 0 #707070;
+        transition: box-shadow 0.3s;
+        width: 100px;
+    }
+    
+    .styleText input[type="text"]:focus,
+    .styleText input[type="text"].focus {
+        box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+    }
+    
+    input[type="number"] {
+        display: inline;
+        margin: 0;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+    }
+    
+    input[type="number"]:focus {
+        outline: none;
+    }
+    
+    .styleText input[type="number"] {
+        padding: 5px;
+        border: solid 1px #fff;
+        box-shadow: inset 1px 1px 2px 0 #707070;
+        transition: box-shadow 0.3s;
+        width: 100px;
+    }
+    
+    .styleText input[type="number"]:focus,
+    .styleText input[type="number"].focus {
+        box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+    }
+    
+    .video {
+        width: 100%;
+        height: 600px;
+    }
+    
+    .pdf {
+        width: 100%;
+        height: 800px;
+    }
+    
+    .sideNav {
+        padding-left: 20px;
+    }
+    
+    .tutorialInput {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    
+    .alert {
+        padding: 5px 5px 5px 5px;
+        margin-bottom: 0px;
+    }
+    
+    .radioHide {
+        visibility: hidden;
+    }
+    
+    input[type=radio]:checked + label {
+        background-color: #d0d0d0;
+    }
+    
+    .bWidth {
+        min-width: 100px;
+    }
+    
+    .btnSidebar {
+        width: 100%;
+        border: 0;
+        text-align: left;
+        color: black;
+    }
+    
+    .btnSidebar {}
+    </style>
+</header>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="hvu.png" style="width:160px;height:33px;border:0" /></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <!--<a href="#"><span class="sr-only">(current)</span></a>--></li>
+                    <li><a href="#">Link  </a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <button type="button" class="btn btn-default navbar-btn">Sign out</button>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <p class="navbar-text">
+                                <!--Signed in as Mark Otto-->
+                                <!--                             </p><span class="caret"></span></a> -->
+                                <!--                         <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="row" ng-controller="sideController">
+        <div class="col-xs-3 col-md-3">
+            <ul class="sideNav nav nav-pills nav-stacked">
+                <a class="btn btn-default btnSidebar" href="#/"><h4>MATLAB</h4></a>
+                <a class="btn btn-default btnSidebar" href="#/">Announcements</a>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle btnSidebar" type="button" data-toggle="dropdown">Assignments
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Due</li>
+                        <li><a href="#/example" ng-click="go('chapter10')">Chapter 10</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Previous</li>
+                        <li><a href="#/chapter9" ng-click="go('chapter9')">Chapter 9</a></li>
+                        <li><a href="#/chapter2" ng-click="go('chapter2')">Chapter 2</a></li>
+                        <li><a href="#/chapter3" ng-click="go('chapter3')">Chapter 3</a></li>
+                        <li><a href="#/Chapter54" ng-click="go('chapter5')">Chapter 5</a></li>
+                        <ul style="text-align: center; float:left; ">
+                            <a href="#/chapter5s1" ng-click="go('chapter5')">Section 1</a>
+                            <a href="#/chapter5s2" ng-click="go('chapter5')">Section 2</a>
+                            <a href="#/chapter5s3" ng-click="go('chapter5')">Section 3</a>
+                            <a href="#/chapter5s4" ng-click="go('chapter5')">Section 4</a>
+                            <a href="#/chapter5s5" ng-click="go('chapter5')">Section 5</a>
+                            <a href="#/chapter5s6" ng-click="go('chapter5')">Section 6</a>
+                            <a href="#/chapter5s7" ng-click="go('chapter5')">Section 7</a>
+                        </ul>
+                        <!-- chapter8s1 -->
+                        <li><a href="#/chapter8s1" ng-click="go('chapter8')">Chapter 8</a></li>
+                        <li><a href="#/chapter9a">Chapter 9a</a></li>
+                        <li><a href="#/Chapter10">Chapter 10a</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle btnSidebar" type="button" data-toggle="dropdown">Course Materials
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">PDF</li>
+                        <li ng-click='go("notes", 9)' ng-show="chapter9"><a>Chapter 9</a></li>
+                        <li ng-click='go("notes10", 10)' ng-show="chapter10"><a>Chapter 10</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle btnSidebar" type="button" data-toggle="dropdown">Videos
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Lecture Videos</li>
+                        <li ng-click="go('lectureVideo', 9.1)" id="lecturevid" ng-if="tutorial" ng-show="chapter9"><a>9.1: Operators</a></li>
+                        <li ng-click="go('lectureVideo', 9.2)" id="lecturevid" ng-if="tutorial" ng-show="chapter9"><a>9.2: Logical Arrays</a></li>
+                        <li ng-click="go('lectureVideo', 9.3)" id="lecturevid" ng-if="tutorial" ng-show="chapter9"><a>9.3: IF-ELSE Constructions</a></li>
+                        <li ng-click="go('lectureVideo', 10.1)" id="lecturevid" ng-if="tutorial" ng-show="chapter10"><a>10.1: For Loops</a></li>
+                        <li ng-click="go('lectureVideo', 10.2)" id="lecturevid" ng-if="tutorial" ng-show="chapter10"><a>10.2: While Loops</a></li>
+                        <li ng-click="go('lectureVideo', 10.3)" id="lecturevid" ng-if="tutorial" ng-show="chapter10"><a>10.3: Efficiency</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Example Videos</li>
+                        <li ng-click="go('exampleVideo', 9.1)" id="exvid" ng-if="tutorial" ng-show="chapter9"><a>Exercise 9.1</a></li>
+                        <li ng-click="go('exampleVideo', 9.2)" id="exvid" ng-if="tutorial" ng-show="chapter9"><a>Exercise 9.2</a></li>
+                        <li ng-click="go('exampleVideo', 9.3)" id="exvid" ng-if="tutorial" ng-show="chapter9"><a>Exercise 9.3</a></li>
+                        <li ng-click="go('exampleVideo', 10.1)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.1</a></li>
+                        <li ng-click="go('exampleVideo', 10.2)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.2</a></li>
+                        <li ng-click="go('exampleVideo', 10.3)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.3</a></li>
+                        <li ng-click="go('exampleVideo', 10.4)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.4</a></li>
+                        <li ng-click="go('exampleVideo', 10.5)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.9</a></li>
+                        <li ng-click="go('exampleVideo', 10.6)" id="exvid" ng-if="tutorial" ng-show="chapter10"><a>Exercise 10.10</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle btnSidebar" type="button" data-toggle="dropdown">Tutorials
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Sections</li>
+                        <li ng-click="go('tutorial', 10.2)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.2: While Loops</a></li>
+                        <li ng-click="go('tutorial', 10.4)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.4: While Loops</a></li>
+                        <li ng-click="go('tutorial', 10.5)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.5: Nested For Loops</a></li>
+                        <li ng-click="go('tutorial', 10.6)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.6: For Loops</a></li>
+                        <li ng-click="go('tutorial', 10.7)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.7: Decisions and For Loops</a></li>
+                        <li ng-click="go('tutorial', 10.8)" id="tutorial" ng-if="tutorial" ng-show="chapter10"><a>10.8: While Loops</a></li>
+                        <li ng-click="go('tutorial', 'conditional')" id="tutorial" ng-if="tutorial" ng-show="chapter9"><a>9.1: Conditional</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Walkthroughs</li>
+                        <li ng-click="go('sudoCode')" ng-show="chapter10"><a>Loops</a></li>
+                        <li ng-click="go('conCode')" ng-show="chapter9"><a>Conditionals</a></li>
+                        <li ng-click="go('animation')" ng-show="chapter10"><a>Loop Animation</a></li>
+                        <li ng-click="go('ifAnimation')" ng-show="chapter9"><a>Conditional Animation</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="container-fluid">
+            <ng-view class="col-xs-8 col-md-8 input-list styleText"></ng-view>
+        </div>
+    </div>
+</body>
+<script src="../config.js"></script>
+<script src="../../controllers/controllers.js"></script>
+<script src="../../controllers/C5S1.js"></script>
+<script src="../../controllers/C8S1.js"></script>
+<script src="../../controllers/C9S1.js"></script>
+<script src="../../controllers/C10S1.js"></script>
+<script src="../../controllers/C5S3.js"></script>
+<script src="../../controllers/C5S4.js"></script>
+<script src="../../controllers/C5S5.js"></script>
+<script src="../../controllers/C5S6.js"></script>
+<script src="../../controllers/C3S1.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+
+</html>

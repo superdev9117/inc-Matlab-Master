@@ -1,0 +1,36 @@
+<div>
+      <h3>Matlab Code Problem</h3>
+      <div ng-controller="codeCtrl" ng-init="init('2','1')">
+          <!-- TODO: IMPL text input switch, and ACL on it
+            TODO: BITBUCKET repo going now.-->
+       <div style="white-space: pre;"> <h2> Q1. <br> {{title }}</h2> </div>
+                        <div class="alert alert-success" style="white-space: pre;"> <i> {{ questionsolution }}</i></div>
+
+
+          <div ng-show="textInput">
+            <!-- Textbox Input options -->
+
+            <div ng-model="textField" ui-ace="aceOptions" style=" height:300px; width:auto;" data-ng-init="GetSolution()" placeholder="Enter MATLAB code here."></div><br>
+            <input class="btn btn-success" type="submit" ng-click="sendCode()" value="Execute"></input>
+            <div ng-hide="errorHide" class="alert alert-danger"><strong>Errors</strong><br> {{ error }}</div>
+            <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warnings</strong><br> {{ warning }}</div>
+            <div  class="alert" style="white-space: pre;"><strong>Result: </strong><br> {{ Results }}</div>
+            <div ng-hide ="resHide" class="alert alert-danger" style="white-space: pre;"><strong>Your input produced the following : </strong><br> {{ stdout }}</div>
+          </div>
+
+
+
+
+
+          <div ng-hide="textInput">
+            <!-- File I/O options -->
+            <!-- TODO: PARSE file as string on client side then post -->
+            <h4>FILE</h>
+          </div>
+      </div><br>
+</div>
+
+
+
+
+<!-- TODO: Adapt to handle and display new code info -->

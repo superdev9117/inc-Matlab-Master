@@ -1,0 +1,7 @@
+<div class="panel-body col-xs-0" ng-controller='panelController'>
+    <h1 class="page-header">{{panel.jsonObject.name}}</h1>
+    <hvu-module ng-repeat="m in panel.jsonObject.moduleList" module="m"></hvu-module>
+    <button class="btn btn-primary"
+            value="Submit" 
+            ng-click="onSubmit()">Submit Assignment</button>
+</div>

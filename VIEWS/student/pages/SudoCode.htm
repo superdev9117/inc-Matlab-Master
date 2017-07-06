@@ -1,0 +1,137 @@
+<div  ng-controller="formCtrl" >
+
+
+    <div ng-if="show">
+        <h1>Question:</h1>
+        <h2>Iterate through the following array and find the <i>{{type}}</i> value.</h2>
+        <h4>Given: <i>k</i> as an index of the array and X is the array.</h4>
+
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Array</th>
+                <th>{{type}}</th>
+                <th>Check</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="item in array">
+                <td ng-if="item.hidden">{{item.index}}</td>
+                <td ng-if="item.hidden">{{item.value}}</td>
+                <td ng-if="item.hidden"><input type="text" class="focus" ng-model="item.input"></td>
+                <td ng-if="item.hidden"><button type="button" class="btn btn-info" ng-click="check(item.index)">Check</button></td>
+                <td ng-if="item.hidden"><div class="alert alert-success" ng-if="item.correct"><strong>Correct!</strong></div> <div class="alert alert-danger" ng-if="item.wrong"><strong>Incorrect!</strong></div></td>
+            </tr>
+        </table>
+        <div class="alert alert-success" ng-if="correct">
+            <strong>Success!</strong>
+        </div>
+
+
+        <h3>What kind of looping structure will be used in this situation?</h3>
+        <div ng-model="loopField" ui-ace="aceOptions" style="height:200px; width:800px;"></div><br>
+        <button type="button" class="btn btn-default" ng-click="text('for')">For</button>
+        <button type="button" class="btn btn-default" ng-click="text('while')">While</button>
+
+        <div>
+            <h3>What kind of conditional will be used in this situation?</h3>
+            <div ng-model="conditionalField" ui-ace="aceOptions" style="height:200px; width:800px;"></div><br>
+            <button type="button" class="btn btn-default" ng-click="text('>')">Greater than</button>
+            <button type="button" class="btn btn-default" ng-click="text('<')">Less than</button>
+            <button type="button" class="btn btn-default" ng-click="text('>=')">Greater than or equal to</button>
+            <button type="button" class="btn btn-default" ng-click="text('<=')">Less than or equal to</button>
+        </div>
+
+        <br><br><br>
+
+        <h4>Given: <i>X =</i> [ {{arrayString}} ] fill out the table assuming {{type}} is equal to X(1) at start.</h4>
+
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>X(Index)</th>
+                <th>{{type}} {{case}} X(Index)</th>
+                <th>{{type}} equals</th>
+                <th>Check</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="item in array">
+                <td ng-if="item.hidden2">{{item.index}}</td>
+                <td ng-if="item.hidden2"> <input type="text" class="focus" ng-model="item.valueInput"></td>
+                <td ng-if="item.hidden2"> <input type="text" class="focus" ng-model="item.decision"></td>
+                <td ng-if="item.hidden2"> <input type="text"  class="focus" ng-model="item.input2"></td>
+                <td ng-if="item.hidden2"><button type="button" class="btn btn-info" ng-click="check2(item.index)">Check</button></td>
+                <td ng-if="item.hidden2"><div class="alert alert-success" ng-if="item.correct2"><strong>Correct!</strong></div> <div class="alert alert-danger" ng-if="item.wrong2"><strong>Incorrect!</strong></div></td>
+            </tr>
+        </table>
+
+        <!-- <div ng-repeat="item in array">
+            index: {{item.index}}<br>
+            value: {{item.value}}<br>
+            input: {{item.input}}<br>
+            input2: {{item.input2}}<br>
+            valueInput: {{item.valueInput}}<br>
+            decision: {{item.decision}}<br>
+            hidden: {{item.hidden}}<br>
+            hidden2: {{item.hidden2}}<br>
+            min: {{item.min}}<br>
+            max: {{item.max}}<br>
+            correct: {{item.correct}}<br>
+            wrong: {{item.wrong}}<br>
+            correct: {{item.correct2}}<br>
+            wrong: {{item.wrong2}}<br><br><br>
+        </div> -->
+
+        <div class="alert alert-success" ng-if="correct2">
+            <strong>Success!</strong>
+        </div>
+
+        <div>
+            <h3>Your Code Solution</h3>
+            <div ng-controller="codeCtrl">
+                <div ng-model="textField" ui-ace="aceOptions" style=" height:200px; width:800px;" ></div><br>
+                <input class="btn btn-success" type="submit" ng-click="sendCode()" value="Send"></input>
+                <div ng-hide="resHide" class="alert alert-success"><strong>Success</strong> {{ content }}</div>
+                <div ng-hide="errorHide" class="alert alert-danger"><strong>Error</strong> {{ error }}</div>
+                <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warning!</strong> {{ warning }}</div>
+            </div><br>
+        </div>
+    </div>
+
+    <div ng-if="!show">
+        <h1>Question:</h1>
+        <h2>Code a solution that iterates through the following array and finds the <i>{{type2}}</i> value.</h2>
+        <h4>Given: <i>k</i> as an index of the array and X is the array X =</i> [ {{arrayString}} ].</h4>
+
+        <h4>What is the {{type2}} value in the array?</h4>
+        <br>
+        <ul ng-repeat="item in array">
+                <button type="button" class="btn btn-info" ng-click="mc(item.value)">{{item.value}}</button>
+        </ul>
+        <div class="alert alert-success" ng-if="mcWrite"><strong>Correct!</strong></div> <div class="alert alert-danger" ng-if="mcWrong"><strong>Incorrect!</strong></div>
+        <br>
+
+        <div>
+            <h3>Code your solution to get the {{type2}} value.</h3>
+            <div ng-controller="codeCtrl">
+                <div ng-model="textField" ui-ace="aceOptions" style=" height:200px; width:800px;" ></div><br>
+                <input class="btn btn-success" type="submit" ng-click="sendCode()" value="Send"></input>
+                <div ng-hide="resHide" class="alert alert-success"><strong>Success</strong> {{ content }}</div>
+                <div ng-hide="errorHide" class="alert alert-danger"><strong>Error</strong> {{ error }}</div>
+                <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warning!</strong> {{ warning }}</div>
+            </div><br>
+        </div>
+
+        <br>
+
+
+
+    </div>
+
+
+    <br><br>
+    <button type="button" class="btn btn-primary" ng-click="load2()">New Question</button>
+    <button type="button" class="btn btn-primary" ng-click="change()">Similar Question</button>
+    <br><br>
+
+
+</div>

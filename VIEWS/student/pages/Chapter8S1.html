@@ -1,0 +1,17 @@
+<div ng-controller="codeCtrlC8S1" ng-init="Shuffle()">
+    <div ng-repeat="q in questions track by $index">
+        <h4 ng-bind-html="q.question">{{q.question}}</h4>
+        <form name="myForm" ng-controller="codeCtrlC8S1">
+            <div ng-repeat="n in q.options track by $index">
+                <label>
+                    <input type="radio" ng-model="options.selected" ng-value="q.options[$index]">
+                    <!-- ng-bind-html="n.text" -->
+                    {{n.text}}
+                    <!--  <option ng-bind-html="n.text">{{n.text}} </option>
+     </label><br/> -->
+            </div>
+            <button type="button" ng-click="CheckAnswer(q.options)">Submit</button>
+            <br> {{q1hints}}
+        </form>
+    </div>
+</div>

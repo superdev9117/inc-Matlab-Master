@@ -1,0 +1,121 @@
+<div  ng-controller="conditionalCtrl" >
+
+    <div>
+        <h1>Question:</h1>
+        <h2>Create a code solution in which you solve the problem and find the X value to the given below.</h2>
+        <h4>Given: <br>
+            X equals 0 <br>
+            <i ng-repeat="item in array">
+                {{item.index}}. {{item.string}}<br>
+            </i><br>
+
+            <i ng-repeat="person in people">
+                {{person.string}}<br>
+            </i>
+        </h4>
+
+
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Evaluated</th>
+                <th>Name</th>
+                <th>Expression</th>
+                <th>Name</th>
+                <th>Outcome</th>
+                <th>X</th>
+                <th>Check</th>
+                <th>Status</th>
+            </tr>
+            <tr ng-repeat="item in array" >
+                <td>{{item.index}} {{item.condition}}</td>
+                <td><button type="button" class="btn btn-default" ng-click="Enter($index)">{{item.enteredString}}</button></td>
+                <td ng-if="item.show"><select class="form-control" style="width: 100px;" ng-model="item.name1" ng-options="name for name in names"></select></td>
+                <td ng-if="item.show"><select class="form-control" ng-model="item.exp" ng-options="exp for exp in expressions"></select></td>
+                <td ng-if="item.show"><select class="form-control" style="width: 100px;" ng-model="item.name2" ng-options="name for name in names"></select></td>
+                <td ng-if="item.show"><button type="button" class="btn btn-default" ng-click="boolChange($index)">{{item.boolInput}}</button></td>
+                <td ng-if="item.show"><input type="text" class="focus" placeholder="0" style="width: 35px;" ng-model="item.XInput"></td>
+                <td ng-if="item.show"><button type="button" class="btn btn-info" ng-click="check($index)">Check</button></td>
+                <td ng-if="item.show"><div class="alert alert-success" ng-if="item.right"><strong>Correct!</strong></div> <div class="alert alert-danger" ng-if="item.wrong"><strong>Incorrect!</strong></div></td>
+            </tr>
+        </table>
+        <!--<div ng-repeat="item in array">
+
+            Index : {{item.index}}<br>
+            Show : {{item.show}}<br>
+            String : {{item.string}}<br>
+            Condition : {{item.condition}}<br>
+            Bool : {{item.bool}}<br>
+            BoolInput : {{item.boolInput}}<br>
+            Expression : {{item.expression}}<br>
+            Opposite : {{item.opposite}}<br>
+            Right : {{item.right}}<br>
+            Wrong : {{item.wrong}}<br>
+            X : {{item.X}}<br>
+            XInput : {{item.XInput}}<br>
+            enteredString : {{item.enteredString}}<br>
+            enteredBool : {{item.enteredBool}}<br>
+            namex : {{item.nameX}}<br>
+            namey : {{item.nameY}}<br>
+            name1 : {{item.name1}}<br>
+            name2 : {{item.name2}}<br>
+            exp : {{item.exp}}<br>
+
+        </div>-->
+        <br>
+        <button type="button" class="btn btn-success" ng-click="Solve()">Solve</button>
+        <div class="alert alert-success" ng-if="correct">
+            <strong>Success!</strong>
+        </div>
+        <div class="alert alert-danger" ng-if="wrong">
+            <strong>Failure!</strong>
+        </div>
+
+
+
+        <div>
+            <h3>What kind of conditional will be used in this situation?</h3>
+            <div ng-model="conditionalField" ui-ace="aceOptions" style="height:200px; width:800px;" readonly="true"></div><br>
+            <h4>Add:</h4>
+            <div ng-if="!On">
+                <button type="button" class="btn btn-default" ng-click="text('>')">&gt;</button>
+                <button type="button" class="btn btn-default" ng-click="text('<')">&lt;</button>
+                <button type="button" class="btn btn-default" ng-click="text('>=')">&gt;=</button>
+                <button type="button" class="btn btn-default" ng-click="text('<=')">&lt;=</button>
+                <button type="button" class="btn btn-default" ng-click="text('==')">==</button>
+                <button type="button" class="btn btn-default" ng-click="text('!=')">!=</button>
+            </div>
+            <div ng-if="On">
+                <button type="button" class="btn btn-default" ng-click="text('if')">If</button>
+                <button type="button" class="btn btn-default" ng-click="text('elseif')">Elseif</button>
+                <button type="button" class="btn btn-default" ng-click="text('else')">Else</button>
+                <button type="button" class="btn btn-default" ng-click="text('end')">End</button>
+            </div>
+            <br>
+            <button type="button" class="btn btn-warning" ng-click="text('reset')">Reset</button>
+        </div>
+
+
+        <div>
+            <h3>Your Code Solution</h3>
+            <div ng-controller="codeCtrl">
+                <div ng-model="textField" ui-ace="aceOptions" style=" height:200px; width:800px;" ></div><br>
+                <input class="btn btn-success" type="submit" ng-click="sendCode()" value="Send"></input>
+                <div ng-hide="resHide" class="alert alert-success"><strong>Success</strong> {{ content }}</div>
+                <div ng-hide="errorHide" class="alert alert-danger"><strong>Error</strong> {{ error }}</div>
+                <div ng-hide ="warningHide" class="alert alert-warning"><strong>Warning!</strong> {{ warning }}</div>
+
+            </div><br>
+        </div>
+    </div>
+
+
+
+
+
+    <br><br>
+    <button type="button" class="btn btn-primary" ng-click="load2()" >New Question</button>
+    <br><br>
+
+
+</div>

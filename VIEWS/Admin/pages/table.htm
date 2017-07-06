@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="Table.js"></script>
+    <meta charset="UTF-8">
+    <title>Yo Table</title>
+</head>
+<style>
+
+    #textbox
+    {
+      border-style: solid ;
+
+        column-width: 50px;
+        border-width: 1px;
+
+    }
+
+    input.ng-invalid {
+        background-color:pink;
+    }
+    input.ng-valid {
+        background-color:lightgreen;
+    }
+    </style>
+<body>
+<!--<div  ng-app="myApp" ng-controller="myTableCtrl">
+<form ng-repeat = "table in tableArray" id = "form{{$index + 1}}" ng-submit="CheckSubmit()" name="theForm" >
+
+
+    &lt;!&ndash;I tried adding custom id to the form, and search for it by document.findelementbyid and it couldn't get back a full form&ndash;&gt;
+    &lt;!&ndash;I have also try doing it by giving each input a model so we can check it in the controller with $scope, but that didnt work&ndash;&gt;
+    &lt;!&ndash;Goals:  all im trying to do is when a user click submit, grab all data in one single row and check it with the tableArray in the controller&ndash;&gt;
+    &lt;!&ndash;feel free to change the form as it fits&ndash;&gt;
+
+    Step Number:  {{$index + 1}} <input  type="text"  name="step-num" size="2"  />
+
+    Row 1 at i : <input type="text" name="r1" size="2" ng-model="val" new-model ="newData.row" id="hello1"/>
+
+    Row 2 at j :<input type="text" name="r2" size="2"new-model ="newData.col" id="hello2"/>
+
+    Logic:<input type="text" name="logic" size="2"new-model ="newData.logic"/>
+
+    Move:<input type="text" name="move" size="2"new-model ="newData.move" />
+    <input type="submit"/>
+
+
+
+
+
+</form>
+
+</div>-->
+<h4>Consider the following code:</h4>
+<div id ="textbox">
+<pre style='color:#000000;background:#ffffff;'>A <span style='color:#808030; '>=</span>
+<span style='color:#808030; '>[</span>1<span style='color:#808030; '>,</span> 2<span style='color:#808030; '>,</span> <span style='color:#808030; '>-</span>1<span style='color:#808030; '>]</span>
+<span style='color:#808030; '>[</span>1<span style='color:#808030; '>,</span> 0<span style='color:#808030; '>,</span> <span style='color:#808030; '>-</span>2<span style='color:#808030; '>]</span>
+<span style='color:#808030; '>[</span>1<span style='color:#808030; '>,</span> 1<span style='color:#808030; '>,</span> 1 <span style='color:#808030; '>]</span><span style='color:#808030; '>;</span>
+</pre>
+
+    <pre style='color:#000000;background:#ffffff;'>i <span style='color:#808030; '>=</span> <span style='color:#bb7977; '>size</span><span style='color:#808030; '>(</span>A<span style='color:#808030; '>,</span>1<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+j <span style='color:#808030; '>=</span> <span style='color:#bb7977; '>size</span><span style='color:#808030; '>(</span>A<span style='color:#808030; '>,</span>2<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+C <span style='color:#808030; '>=</span> <span style='color:#bb7977; '>zeros</span><span style='color:#808030; '>(</span>i<span style='color:#808030; '>,</span>j<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+<span style='color:#800000; font-weight:bold; '>for</span> ii <span style='color:#808030; '>=</span> 1<span style='color:#808030; '>:</span>i
+    <span style='color:#800000; font-weight:bold; '>for</span> jj <span style='color:#808030; '>=</span> 1<span style='color:#808030; '>:</span>j
+         Move <span style='color:#808030; '>=</span> A<span style='color:#808030; '>(</span>ii<span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> A<span style='color:#808030; '>(</span>jj<span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>end</span>
+<span style='color:#800000; font-weight:bold; '>end</span>
+</pre>
+
+</div>
+<h4>Fill out the table below:</h4>
+<b>Step #: | ii: | jj: | Logic: | Move:</b>
+<div ng-app="myApp" ng-controller="formCtrl" ng-repeat="n in [1,42, 42, 43, 1, 2 , 3 ,4 ,5] track by $index"  >
+    <form novalidate >
+
+        <input type="text" ng-model="user.step" size="4" required >
+
+        <input type="text" ng-model="user.row" size="2" required>
+
+
+
+        <input type="text" ng-model="user.col" size="2" required>
+
+
+
+        <input type="text" ng-model="user.logic" size="6" required>
+
+
+
+        <input type="text" ng-model="user.move" size="2" required>
+
+
+
+        <button ng-click="check()">Check</button>
+        {{hints}}
+    </form>
+    <!--enable if u want to check what the users typed-->
+<!--    <p>form = {{user }}</p>
+    <p>master = {{master}}</p>-->
+</div>
+<br>
+<button type = "button" disabled>Next Problem</button>
+
+<!--using this to see if it works individually, but it still weren't able to pull the form-->
+
+<!--<div  ng-app="myApp" ng-controller="myTableCtrl">
+<form id="form100" ng-submit="CheckSubmit()">
+
+    Step Number: <input  type="text"  name="step-num" size="2"  />
+    Row 1 at i : <input type="text" name="r1" size="2" ng-model="val" new-model ="newData.row"/>
+    Row 2 at j :<input type="text" name="r2" size="2"new-model ="newData.col"/>
+    Logic:<input type="text" name="logic" size="2"new-model ="newData.logic"/>
+    Move:<input type="text" name="move" size="2"new-model ="newData.move" />
+    <input type="submit"/>
+
+
+
+
+</form>
+    </div>-->
+
+</body>
+</html>

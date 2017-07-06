@@ -1,0 +1,178 @@
+<div class="panel panel-default">
+    <div class="panel-body" ng-controller="renderController">
+        <h2 class="page-header">Page Builder</h2>
+        <p>Enter the information to create the page you need!</p>
+
+        <div class="col-sm-12 col-md-9" style="outline: 1px solid orange; height: 100%" id="canvas">
+            <table>
+                <tr ng-repeat="item in element">
+                    <td>
+                        <div id="{{$index}}" hvu-element="{{item.input}}"></div>
+                        {{item.x}} {{item.y}}
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr ng-repeat="id in panelID">
+                    <td>
+                        <button type="button" class="btn btn-default" ng-click="get(id)">{{id}}</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    <!--<div element = "element[0].input"></div>-->
+        <div class="col-sm-3 col-md-3">
+            <textarea ng-model="input" cols="14" rows="5"></textarea></br></br>
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" ng-click="addElement()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data- target="#videoModule">Video Module</button>
+                </li>
+                <li role="presentation" ng-click="panelLoad()">panel ID load</li>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#pdfModule">PDF Module</button></br></br>
+
+                <button type="button" class="btn btn-info btn-lg" ng-click="submit()">Save</button></br></br>
+                <button type="button" class="btn btn-info btn-lg" ng-click="get()">Load</button></br></br>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#resources">Resources</button></br></br>
+            </ul>
+            <textarea ng-model="Title" cols="14" rows="5"></textarea>
+        </div>
+
+
+
+
+        <div class="modal fade" id="videoModule" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Embed Source.</p>
+                        <textarea ng-model="videoSRC" cols="14" rows="5"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="video()">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="pdfModule" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Embed Source.</p>
+                        <input type="file" name="file" id="file">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="pdf()">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="resources" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Resources</h3>
+                    </div>
+                    <div class="modal-body" style="max-height: 400px; overflow-y: scroll;">
+                        <div class="row" style="padding: 10px;">
+                            <h4>Course Resources</h4>
+                            <label><a href="#">Chapter 3: Looping Structures</a></label>
+                            <br>
+                            <label><a href="#">Chapter 4: Conditionals</a></label>
+                            <br>
+                            <hr>
+                            <h4>What type of looping structure?</h4>
+                            <ul>
+                                <li><a onclick="toggle2()">For</a></li>
+                                <li><a>While</a></li>
+                            </ul>
+                            <div id="loop-well" style="display: none;" class="well">
+                                    x = [2  -3  -5  0  -3];<br><br>
+                                    count = 0;<br>
+
+                                    for index = 1: length(x)<br>
+
+                                        &nbsp;&nbsp;&nbsp;if x(index) >= 0<br>
+
+                                        &nbsp;&nbsp;&nbsp;count = count + 1;<br>
+
+                                        &nbsp;&nbsp;&nbsp;end<br>
+
+                                    end<br>
+                            </div>
+
+                            <br>
+
+                            <h4>What type of conditional structure?</h4>
+                            <ul>
+                                <li><a onclick="toggle()">If</a></li>
+                                <li><a>Switch</a></li>
+                            </ul>
+                            <div>
+                                <div id="conditional-well" style="display: none;" class="well">
+                                    a = randi(100, 1);<br><br>
+
+                                    if  a < 30<br>
+                                        &nbsp;&nbsp;&nbsp;disp('small')<br>
+                                    elseif a < 80<br>
+                                       &nbsp;&nbsp;&nbsp; disp('medium')<br>
+                                    else<br>
+                                        &nbsp;&nbsp;&nbsp;disp('large')<br>
+                                    end
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>Hints</h4>
+                            <p>Our Hints may go here!</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script>
+            var toggle = function(){
+                var well = document.getElementById('conditional-well');
+                well.style.display = 'block';
+            }
+
+            var toggle2 = function(){
+                var well = document.getElementById('loop-well');
+                well.style.display = 'block';
+            }
+        </script> 
+
+    </div>
+</div>
+
+
+
+<!--{{element[0].x}}  {{element[0].y}} {{element[0].input}}-->

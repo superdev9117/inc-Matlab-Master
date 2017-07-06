@@ -1,0 +1,79 @@
+<div ng-controller="pcController">
+
+
+<!--  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+
+
+  <!-- Body Container -->
+	<div class="container-fluid">
+		<div class="row">
+    <!-- Section For Table -->
+			<div class="col-md-6" ng-controller="pcController">
+				<label for="equation" class="math">`e^x = 1 + x + x^2/(2!) + x^3/(3!) + ...`</label><br>
+        <h2 class="math">`x = 3`</h2>
+        <h2>Continue until difference is less than 0.1</h2>
+				<table class="table table-bordered table-striped">
+				    <thead>
+				      <tr>
+				        <th>Term</th>
+				        <th>Contribution</th>
+				        <th>Estimate</th>
+                <th></th>
+                <th>Result</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="row in table track by $index" class="math">
+				        <td class="button-cell">{{ row.term }}</td>
+                <td><input ng-model="table[$index].contrib" type="text"></td>
+				        <td><input ng-model="table[$index].estimate" type="text"></td>
+                <td class="button-cell">
+                  <button class="btn btn-default" ng-click="check($index)">Check</button>
+                  <button class="btn btn-default" data-ng-disabled="fillstatus()" ng-click="fill($index) ">Fill</button>
+                </td>
+                <td id="result" style="background-color: {{ table[$index].result }}">
+                </td>
+				      </tr>
+				    </tbody>
+				  </table>
+          <button  class="btn btn-default" ng-click="fill()">Fill All</button>
+			</div>
+      <!-- Section For Pseudo Code -->
+			<div style="margin-top: 7%;" class="right col-md-6">
+        <h2>Select one of the following looping structures.</h2>
+				<button class="btn btn-default" onclick="addFor(event)">For</button>
+        <button class="btn btn-default" onclick="addIfElse(event)">If Else</button><br>
+        <button class="btn btn-default" onclick="addWhile(event)">While</button><br>
+        <textarea id="pc-area" value=""></textarea>
+			</div>
+		</div>
+	</div>
+	
+  <!-- Application source script and pseudo code script -->
+  <script src="../../controllers.js"></script>
+
+    <!--/home/q/Greyjoy/HanshawVirtualUniversity/Admin/controllers.js-->
+
+  <!-- Script to control textarea input on button clicks (will end up grouping up into controller) -->
+  <script>
+
+    var bit = 0;
+
+    function addFor(event){
+      var tArea = document.getElementById("pc-area")
+      tArea.innerHTML = "";
+      tArea.innerHTML = "x=3;\ndif=inf\nestimate=0;\ncontribution=0;\n\nfor ii = 0:9\n\tif (dif < 0.1)\n\t\tbreak\n\tend\n\tcontribution = (x^ii)/(ii)!\n\told = estimate; \n\testimate+=contribution\n\tdif = estimate-old\nend";
+    }
+    function addIfElse(event){
+      var tArea = document.getElementById("pc-area")
+      tArea.innerHTML = "";
+      tArea.innerHTML = "x=3;\ndif=inf\nestimate=0;\ncontribution=0;\n\nfor ii = 0:9\n\tif (dif < 0.1)\n\t\tbreak\n\telse\n\t\tcontribution = (x^ii)/(ii)!\n\t\told = estimate; \n\t\testimate+=contribution\n\t\tdif = estimate-old\n\tend\nend";
+    }
+    function addWhile(event){
+      var tArea = document.getElementById("pc-area")
+      tArea.innerHTML = "";
+      tArea.innerHTML = "term = 0;\nx=3;\ndif=inf\nestimate=0;\ncontribution=0;\n\nwhile dif > 0.1\n\tcontribution = (x^term)/(term)!\n\told = estimate; \n\testimate+=contribution\n\tdif = estimate-old\n\tterm++;\nend";
+    }
+  </script>
+
+</div>

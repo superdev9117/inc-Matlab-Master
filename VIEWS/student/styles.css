@@ -1,0 +1,233 @@
+        .sideBar li:hover{
+            background-color: #DFDFDF;
+          }
+          .sideBar a:hover{
+          	text-decoration: none;
+          }
+
+          .sideBar{
+            margin-top: 10%;
+            position: fixed;
+            right: 0;
+            width: 250px;
+          }
+          #tutorial{
+          	cursor: pointer;
+          }
+          .code{
+          	max-width: 75%;
+          	box-shadow: 4px 4px 2px #888888;
+          }
+          li{
+          	cursor: pointer;
+          }
+          .table-wrapper{
+          	max-width: 75%;
+          }
+            @import url(http://fonts.googleapis.com/css?family=Nunito);
+
+            /*Basic reset*/
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: Nunito, arial, verdana;
+            }
+            #vertical-menu-display{
+                position: fixed;
+                top: 90%;
+                right: 2%;
+            }
+            #vertical-menu {
+                width: 250px;
+                margin: 100px auto 0 auto;
+                position: fixed;
+                top: 50%;
+                right: 1%;
+                max-height: 250px;
+                overflow-y: scroll;
+                border-style: solid;
+                /*box-shadow:
+                    0 5px 15px 1px rgba(0, 0, 0, 0.6),
+                    0 0 200px 1px rgba(255, 255, 255, 0.5);*/
+            }/*heading styles*/
+            #vertical-menu h3 {
+                font-size: 12px;
+                line-height: 34px;
+                padding: 0 10px;
+                cursor: pointer;
+                /*fallback for browsers not supporting gradients*/
+                background: #003040;
+                background: linear-gradient(#003040, #002535);
+            }
+            /*heading hover effect*/
+            #vertical-menu h3:hover {
+                text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+            }
+            /*iconfont styles*/
+            #vertical-menu h3 span {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+            /*list items*/
+            #vertical-menu li {
+                list-style-type: none;
+            }
+            /*links*/
+            #vertical-menu ul ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 11px;
+                line-height: 27px;
+                display: block;
+                padding: 0 15px;
+                /*transition for smooth hover animation*/
+                transition: all 0.15s;
+            }
+            /*hover effect on links*/
+            #vertical-menu ul ul li a:hover {
+                background: #003545;
+                /*border-left: 5px solid lightgreen;*/
+            }
+            /*Lets hide the non active LIs by default*/
+            #vertical-menu ul ul {
+                display: none;
+            }
+            #vertical-menu li.active ul {
+                display: block;
+            }
+
+            .video {
+                width: 600px;
+                height: 400px;
+                border-style: dotted;
+            }
+            .grid {
+                width: 500px;
+                height: 250px;
+            }
+            .grid1 {
+                width: 600px;
+                height: 300px;
+                border-style: dotted;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 75%;
+                box-shadow: 4px 4px 2px #888888;
+            }
+
+            th, td {
+                text-align: center;
+                padding: 8px;
+            }
+
+            tr:nth-child(even){background-color: #f2f2f2}
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            a.fill-li {
+                display: block;
+                height: 100%;
+                width: 100%;
+                text-decoration: none;
+            }
+
+            input[type="text"] {
+              display: inline;
+              margin: 0;
+              appearance: none;
+              box-shadow: none;
+              border-radius: none;
+            }
+            input[type="text"]:focus {
+              outline: none;
+            }     
+
+            .styleText input[type="text"] {
+              padding: 5px;
+              border: solid 1px #fff;
+              box-shadow: inset 1px 1px 2px 0 #707070;
+              transition: box-shadow 0.3s;
+                width:100px;
+            }
+            .styleText input[type="text"]:focus,
+            .styleText input[type="text"].focus {
+              box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+            }
+            
+            input[type="number"] {
+              display: inline;
+              margin: 0;
+              appearance: none;
+              box-shadow: none;
+              border-radius: none;
+            }
+            input[type="number"]:focus {
+              outline: none;
+            }     
+
+            .styleText input[type="number"] {
+              padding: 5px;
+              border: solid 1px #fff;
+              box-shadow: inset 1px 1px 2px 0 #707070;
+              transition: box-shadow 0.3s;
+                width:100px;
+            }
+            .styleText input[type="number"]:focus,
+            .styleText input[type="number"].focus {
+              box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+            }
+            
+
+            .video{
+                width: 100%; 
+                height:600px;
+            }
+
+            .pdf{
+                width: 100%; 
+                height: 800px;
+            }
+            
+            .sideNav{
+                padding-left: 20px;
+            }
+            
+            .tutorialInput{
+                margin-top: 20px;
+                margin-left: 10px;
+            }
+            
+            .alert{
+                padding:5px 5px 5px 5px;
+                margin-bottom:0px;
+            }
+            
+            .radioHide{
+                visibility:hidden;
+            }
+            
+
+            input[type=radio]:checked + label { 
+                background-color:#d0d0d0;
+            }
+            
+            .bWidth{
+                min-width:100px;
+            }
+            
+            .btnSidebar{
+                width:100%;
+                border: 0;
+                text-align: left;
+                color:black;
+            }
+            
+            .btnSidebar{
+                
+            }
